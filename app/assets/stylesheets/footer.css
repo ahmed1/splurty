@@ -1,0 +1,20 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  /*background-color: #dfdfdf;*/
+}
+/*Created new file and pasted "Sticky footer styles" from bootstrap page to make the existing 
+footer in the application.html.erb from apps/views/layouts to be sticky */
+
+/* This file is in app/assets/stylesheets*/
