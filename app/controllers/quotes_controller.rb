@@ -16,8 +16,8 @@ class QuotesController < ApplicationController
      redirect_to root_path
     end
 
-    
-      
+    def about #after hooking up the url 
+    end
 
 
     private
