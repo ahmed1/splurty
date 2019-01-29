@@ -11,6 +11,7 @@
   <body>
     <header class= "row">
       <div class="col-3">
+        <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
           You know
@@ -19,6 +20,7 @@
           <br />
           to code
         </div>
+        <% end %> <!-- w/o the %=, means we run this code but don't spit the value out to the page-->
       </div>
       <div class="col-4 slogan">
         Splurting out unsolicited advice about entrepreneurship since 2015
@@ -44,7 +46,7 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <%= link_to "This isn't enough, I need more.", "#", class: 'next-quote' %>
+            <%= link_to "This isn't enough, I need more.", root_path, class: 'next-quote' %>
           </div>
           <div class="col-6 footer-blurb">
             Website by Ahmed Shoukr <a href="https://splurty-ahmed-shoukr.herokuapp.com"> There will be a lot of blog posts about coding here. </a>
