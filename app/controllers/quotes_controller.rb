@@ -8,10 +8,16 @@ class QuotesController < ApplicationController
       @quote = Quote.new
     end
 
-    def create #the quote will be saved in our database when user clicks create button
-      Quote.create(quote_params) #sends the saying and author parts to the database so they are saved
-      redirect_to root_path #sends user back to root page
+    def create
+      @quote = Quote.create(quote_params)
+      if @quote.invalid?
+       flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
+      end
+     redirect_to root_path
     end
+
+    
+      
 
 
     private
@@ -23,3 +29,12 @@ class QuotesController < ApplicationController
 
 
 end
+
+# def create #the quote will be saved in our database when user clicks create button
+#@quote = Quote.create(quote_params) #sends the saying and author parts to the database so they are saved
+    #   if @quote.isvalide?
+    #     flash[:error] = '<strong> Could not save </strong> the data you entered is invalid.'
+    #   end #this won't actually show the error, we need to update the homepage to show the error in the application.html.erb
+
+    #   redirect_to root_path #sends user back to root page
+    # end

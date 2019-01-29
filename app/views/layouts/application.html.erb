@@ -38,6 +38,11 @@
 
     <br class="clear" />
     <div class="container">
+      <% if flash[:error].present? %>
+        <div class="col-10 offset-1 alert alert-danger">
+          <%= flash[:error].html_safe %>  <!-- the .html_safe is to put this code out-- since ruby on rails usually tries to prevent html from going to the webpage  -->
+        </div>
+      <% end %>
      <%= yield %>
     </div>
 
