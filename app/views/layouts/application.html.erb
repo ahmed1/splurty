@@ -26,15 +26,56 @@
         Splurting out unsolicited advice about entrepreneurship since 2015
       </div>
       <div class="col-5 links">
-        <%= link_to 'Contribute', new_quote_path %>
+       <!-- Button trigger modal -->
+      <!--  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Contribute
+        </button> -->
+        <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
+        <!-- <%= link_to 'Contribute', new_quote_path %> -->
         <%= link_to 'About', about_path %>
       </div>
     </header>
 
+
+ 
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
+          </div>
+          <%= simple_form_for Quote.new do |f| %> <!-- took out for @quote do ]f]...-->
+          <div class="modal-body">
+            <%= f.input :saying %>
+            <%= f.input :author %>
+            <br /> 
+              <!-- this is for a few line breaks -->
+                           <!--  Submit button so user can submit the form-->
+               <!-- added a bootstrap 4button css style -->
+           
+          </div>
+          <div class="modal-footer">
+
+           
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <%= f.submit 'Create', class: 'btn btn-danger' %>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <hr />  <!-- this is the line at the bottom of the nav bar -->
-
-
-
 
     <br class="clear" />
     <div class="container">

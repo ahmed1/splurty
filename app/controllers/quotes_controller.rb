@@ -4,9 +4,9 @@ class QuotesController < ApplicationController
         #Now, the first quote that we have in our database is stuffed into the variable called @quote
     end
 
-    def new
-      @quote = Quote.new
-    end
+    # def new -- no oonger needed after moved form in contribute modal link
+    #   @quote = Quote.new
+    # end
 
     def create
       @quote = Quote.create(quote_params)
